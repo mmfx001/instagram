@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  AiFillHome, 
-  AiOutlineSearch, 
-  AiOutlineCompass, 
-  AiOutlineMessage, 
-  AiOutlineHeart, 
-  AiOutlinePlusSquare, 
-  AiOutlineUser, 
-  AiOutlineEllipsis // "More" uchun ikonka
+import {
+  AiFillHome,
+  AiOutlineSearch,
+  AiOutlineCompass,
+  AiOutlineMessage,
+  AiOutlineHeart,
+  AiOutlinePlusSquare,
+  AiOutlineUser,
+  AiOutlineEllipsis // "More" icon
 } from 'react-icons/ai';
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="fixed w-64 h-screen p-4 bg-white shadow-lg flex flex-col overflow-y-auto">
       <Link to="/home" className="text-3xl font-bold mb-8 text-black">
@@ -48,12 +58,35 @@ const Sidebar = () => {
         </Link>
       </nav>
       <div className="mt-auto">
-        <Link to="/more" className="flex items-center space-x-4 text-lg text-black hover:text-blue-500">
-          <AiOutlineEllipsis size={24} />
-          <span>More</span>
-        </Link>
+        <div className={`dropdown ${isOpen ? 'dropdown-open' : ''} dropdown-top`}>
+          <div
+            className="flex items-center space-x-4 text-lg text-black hover:text-blue-500 cursor-pointer"
+            onClick={toggleDropdown}
+          >
+            <AiOutlineEllipsis size={24} />
+            <span>More</span>
+          </div>
+          {isOpen && (
+            <ul className="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow z-10">
+              <Link to="/settings">
+                <li><a onClick={closeDropdown}>Settings</a></li>
+              </Link>
+              <Link to="/actions">
+                <li><a onClick={closeDropdown}>Your actions</a></li>
+              </Link>
+              <Link to="/saved">
+                <li><a onClick={closeDropdown}>Saved</a></li>
+              </Link>
+              <Link to="/problem">
+                <li><a onClick={closeDropdown}>Report a problem</a></li>
+              </Link>
+              <Link to="/switching">
+                <li><a onClick={closeDropdown}>Switching account</a></li>
+              </Link>
+            </ul>
+          )}
+        </div>
       </div>
-
     </div>
   );
 };

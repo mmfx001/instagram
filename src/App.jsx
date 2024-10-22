@@ -9,7 +9,12 @@ import Notifications from './pages/Notifications';
 import Create from './pages/Create';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
-import More from './pages/More';
+import Settings from './pages/Settings';
+import Actions from './pages/actions';
+import Saved from './pages/saved';
+import Problem from './pages/Problem';
+import Switching from './pages/Switching';
+
 
 const App = () => {
   return (
@@ -37,7 +42,11 @@ const Main = () => {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/create" element={<Create />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/more" element={<More />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/actions" element={<Actions />} />
+          <Route path="/saved" element={<Saved />} />
+          <Route path="/problem" element={<Problem />} />
+          <Route path="/switching" element={<Switching/>} />
         </Routes>
       </div>
     </div>
