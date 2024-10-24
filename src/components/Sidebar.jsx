@@ -4,7 +4,7 @@ import {
   AiFillHome, 
   AiOutlineSearch, 
   AiOutlineCompass, 
-  AiOutlineMessage, 
+  AiOutlineMessage,   
   AiOutlineHeart, 
   AiOutlinePlusSquare, 
   AiOutlineUser, 

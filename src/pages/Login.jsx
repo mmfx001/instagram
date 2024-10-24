@@ -23,7 +23,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md p-6 border border-gray-300 rounded-lg shadow-lg bg-white mx-4 md:mx-0">
         <h1 className="text-center text-3xl font-bold text-gray-800 mb-8">Instagram</h1>
 
