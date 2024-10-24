@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import {
   AiFillHome,
   AiOutlineSearch,
@@ -9,6 +10,17 @@ import {
   AiOutlinePlusSquare,
   AiOutlineUser,
   AiOutlineEllipsis // "More" icon
+=======
+import { 
+  AiFillHome, 
+  AiOutlineSearch, 
+  AiOutlineCompass, 
+  AiOutlineMessage,   
+  AiOutlineHeart, 
+  AiOutlinePlusSquare, 
+  AiOutlineUser, 
+  AiOutlineEllipsis // "More" uchun ikonka
+>>>>>>> origin/sadi
 } from 'react-icons/ai';
 
 const Sidebar = () => {
