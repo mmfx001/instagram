@@ -5,7 +5,7 @@ const Notifications = () => {
 
   useEffect(() => {
     // Fetch data from your JSON Server
-    fetch('http://localhost:5000/notification')
+    fetch('http://localhost:5001/notification')
       .then(response => response.json())
       .then(data => setNotifications(data))
       .catch(error => console.error('Error fetching notifications:', error));
